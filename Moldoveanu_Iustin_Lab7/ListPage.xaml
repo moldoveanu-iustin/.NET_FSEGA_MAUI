@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Moldoveanu_Iustin_Lab7.ListPage"
+             Title="List">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#FFDEE9" Offset="0.0" />
+            <GradientStop Color="#B5FFFC" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+
+            <!-- Shopping List Description -->
+            <Frame BorderColor="#007BFF"
+                   BackgroundColor="White"
+                   CornerRadius="8"
+                   Padding="15"
+                   HasShadow="True">
+                <Editor 
+                    Placeholder="Enter the description of the shopping list"
+                    Text="{Binding Description}"
+                    HeightRequest="100"
+                    FontSize="16"
+                    FontAttributes="Italic"
+                    VerticalTextAlignment="Start"
+                    SemanticProperties.Description="Enter shopping list description"
+                    AutoSize="TextChanges" />
+            </Frame>
+
+            <!-- Buttons Grid -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Save Button -->
+                <Button 
+                    Text="Save" 
+                    Clicked="OnSaveButtonClicked"
+                    BackgroundColor="#007BFF"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="25"
+                    HeightRequest="50"
+                    HorizontalOptions="FillAndExpand"
+                    Padding="15,0"
+                    SemanticProperties.Hint="Click to save the shopping list"
+                    BorderColor="#0056b3" 
+                    BorderWidth="1"/>
+
+                <!-- Delete Button -->
+                <Button 
+                    Grid.Column="1"
+                    Text="Delete"
+                    Clicked="OnDeleteButtonClicked"
+                    BackgroundColor="#FF4C4C"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="25"
+                    HeightRequest="50"
+                    HorizontalOptions="FillAndExpand"
+                    Padding="15,0"
+                    SemanticProperties.Hint="Click to delete the shopping list"
+                    BorderColor="#cc0000"
+                    BorderWidth="1"/>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+    
+    

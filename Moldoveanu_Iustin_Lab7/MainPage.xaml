@@ -3,22 +3,64 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Moldoveanu_Iustin_Lab7.MainPage">
 
-    <ScrollView>
+    <ContentPage.Background>
+    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="#FFDEE9" Offset="0.0" />
+        <GradientStop Color="#B5FFFC" Offset="1.0" />
+    </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ScrollView HorizontalOptions="CenterAndExpand">
         <VerticalStackLayout
-            Padding="50,0"
-            Spacing="25">
-            <Image
-                Source="shopping_list.png"
-                HeightRequest="125"
-                Aspect="AspectFit"
-                SemanticProperties.Description="Shopping List image" />
+            Padding="20"
+            Spacing="25"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
 
-            <Label
-                Text="This is your shopping list app"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="This is your shopping list app" />
+            <!-- Card pentru imagine -->
+            <Frame
+                CornerRadius="20"
+                HorizontalOptions="Center"
+                Padding="20"
+                BackgroundColor="White"
+                HasShadow="True"
+                WidthRequest="200"
+                HeightRequest="200">
+                <Image
+                    Source="shopping_list.png"
+                    HeightRequest="150"
+                    WidthRequest="150"
+                    Aspect="AspectFit"
+                    SemanticProperties.Description="Shopping List image" />
+            </Frame>
 
+            <!-- Card pentru text -->
+            <Frame
+                CornerRadius="15"
+                Padding="20"
+                BackgroundColor="White"
+                HasShadow="True"
+                HorizontalOptions="Center"
+                WidthRequest="300">
+                <VerticalStackLayout Spacing="10">
+                    <Label
+                        Text="Welcome to your Shopping List App!"
+                        FontSize="22"
+                        FontAttributes="Bold"
+                        TextColor="#007BFF"
+                        HorizontalTextAlignment="Center"
+                        SemanticProperties.HeadingLevel="Level1"
+                        SemanticProperties.Description="Welcome to your Shopping List App!" />
+
+                    <Label
+                        Text="Organize everything with style and efficiency."
+                        FontSize="16"
+                        TextColor="#495057"
+                        HorizontalTextAlignment="Center"
+                        SemanticProperties.HeadingLevel="Level2"
+                        SemanticProperties.Description="Organize everything with style and efficiency." />
+                </VerticalStackLayout>
+            </Frame>
         </VerticalStackLayout>
     </ScrollView>
 
