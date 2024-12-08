@@ -1,6 +1,5 @@
 using Moldoveanu_Iustin_Lab7.Models;
 using SQLite;
-using System.IO;
 
 namespace Moldoveanu_Iustin_Lab7;
 
